@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #e7b85e;
+
+  .container-fluid {
+    margin: 0.5em !important;
+    padding-left: 0.5em !important;
+
+    .logo {
+      color: #522618 !important;
+      font-weight: 700;
+      margin-right: 0.5em !important;
+    }
+    button {
+      color: black !important;
+    }
+
+    .toggle-btn {
+      background-color: white !important;
+    }
+  }
+}

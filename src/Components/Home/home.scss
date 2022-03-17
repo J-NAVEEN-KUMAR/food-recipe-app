@@ -1,0 +1,75 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .input-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-top: 0.5em !important;
+    color: #522618;
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        width: 100%;
+        background-color: antiquewhite;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px !important;
+        transition: all 0.25s ease;
+
+        &:hover {
+          transform: scale(1.025);
+        }
+      }
+      button {
+        background-color: #522618;
+        padding: 5px !important;
+        margin-top: 10px !important;
+        color: white;
+        border-radius: 10px !important;
+        transition: all 0.25s ease;
+
+        &:hover {
+          transform: scale(1.075);
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+      background-color: #522618 !important;
+      color: white;
+      margin: 10px !important;
+      text-align: center;
+      align-items: center;
+    }
+
+    img {
+      width: 250px !important;
+      margin: 10px !important;
+      transition: all 0.4s ease;
+      border-radius: 10px !important;
+      object-fit: contain;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useState } from "react";
 import { myContext } from "../Context/Context";
+import "./home.scss";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,8 +10,10 @@ const Home = () => {
   const fetchMealsHandler = useCallback(() => {
     fetchHomePageMeals(searchTerm);
   }, [searchTerm, fetchHomePageMeals]);
+
   return (
-    <>
+    <div className="home">
+      <h2>Hey there!</h2>
       <div className="input-div">
         <div className="input-group mb-3">
           <input
@@ -30,30 +33,41 @@ const Home = () => {
         </div>
       </div>
       <div className="container">
-        <div className="row">
-          {meals ? (
-            meals.map((meal) => (
-              <div
-                className="card column"
-                style={{ width: "18rem" }}
-                key={meal.idMeal}
-              >
-                <img
-                  src={meal.strMealThumb}
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h4 className="card-text">{meal.strMeal}</h4>
+        {meals ? (
+          meals.map((meal) => (
+            // <div
+            //   className="card column"
+            //   style={{ width: "18rem" }}
+            //   key={meal.idMeal}
+            // >
+            //   <img
+            //     src={meal.strMealThumb}
+            //     className="card-img-top"
+            //     alt="..."
+            //   />
+            //   <div className="card-body">
+            //     <h4 className="card-title">{meal.strMeal}</h4>
+            //   </div>
+            // </div>
+
+            <div className="g-4" key={meal.idMeal}>
+              <div className="col">
+                <div className="card">
+                  <img src={meal.strMealThumb} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{meal.strMeal}</h5>
+                  </div>
                 </div>
               </div>
-            ))
-          ) : (
-            <h2>Hey No meals found! Try another word!</h2>
-          )}
-        </div>
+            </div>
+          ))
+        ) : (
+          <h2 style={{ textAlign: "center" }}>
+            Hey No meals found! Try another word!
+          </h2>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

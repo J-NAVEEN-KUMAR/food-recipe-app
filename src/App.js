@@ -10,13 +10,17 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar className="navbar" />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/random" element={<Random />} />
+          <Route path="/" element={<Home />} className="home" />
+          <Route
+            path="/categories"
+            element={<Categories />}
+            className="categories"
+          />
+          <Route path="/random" element={<Random />} className="random" />
         </Routes>
-        <Footer />
+        <Footer className="footer"/>
       </Router>
     </div>
   );

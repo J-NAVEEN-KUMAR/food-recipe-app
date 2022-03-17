@@ -13,7 +13,7 @@ export const AppContext = ({ children }) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
       .then((res) => {
-        // console.log(res.data.meals);
+        console.log(res.data.meals);
         setMeals(res.data.meals);
       });
   }, []);

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { myContext } from "../Context/Context";
 
 const Categories = () => {
-  const { fetchCategories, categories, fetchNationMeal, mealByNation } =
+  const { fetchCategories,  fetchNationMeal, mealByNation } =
     useContext(myContext);
   const [nation, setNation] = useState("American");
 
