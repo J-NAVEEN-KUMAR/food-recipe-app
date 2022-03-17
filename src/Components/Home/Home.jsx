@@ -16,7 +16,7 @@ const Home = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Search for a meal"
+            placeholder="Search for a meal by a word or click search for some random meals"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -29,19 +29,29 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="info-cards">
-        {meals ? (
-          meals.map((meal) => (
-            <div className="card" style={{ width: "18rem" }} key={meal.idMeal}>
-              <img src={meal.strMealThumb} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h4 className="card-text">{meal.strMeal}</h4>
+      <div className="container">
+        <div className="row">
+          {meals ? (
+            meals.map((meal) => (
+              <div
+                className="card column"
+                style={{ width: "18rem" }}
+                key={meal.idMeal}
+              >
+                <img
+                  src={meal.strMealThumb}
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h4 className="card-text">{meal.strMeal}</h4>
+                </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <h2>Hey No meals found! Try another word!</h2>
-        )}
+            ))
+          ) : (
+            <h2>Hey No meals found! Try another word!</h2>
+          )}
+        </div>
       </div>
     </>
   );

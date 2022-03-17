@@ -7,12 +7,13 @@ export const AppContext = ({ children }) => {
   const [meals, setMeals] = useState([]);
   const [categories, setCategories] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
+  const [mealByNation, setMealByNation] = useState([]);
 
   const fetchHomePageMeals = useCallback((searchTerm) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
       .then((res) => {
-        console.log(res.data.meals);
+        // console.log(res.data.meals);
         setMeals(res.data.meals);
       });
   }, []);
@@ -21,7 +22,7 @@ export const AppContext = ({ children }) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
       .then((res) => {
-        console.log(res.data.categories);
+        // console.log(res.data.categories);
         setCategories(res.data.categories);
       });
   }, []);
@@ -30,8 +31,18 @@ export const AppContext = ({ children }) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((res) => {
-        console.log(res.data.meals);
+        // console.log(res.data.meals);
         setRandomMeal(res.data.meals);
+      });
+  }, []);
+
+  const fetchNationMeal = useCallback((nation) => {
+    axios
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${nation}`)
+      .then((res) => {
+        console.log(nation);
+        console.log(res.data.meals);
+        setMealByNation(res.data.meals);
       });
   }, []);
 
@@ -44,6 +55,8 @@ export const AppContext = ({ children }) => {
         categories,
         randomMeal,
         fetchRandomMeal,
+        fetchNationMeal,
+        mealByNation
       }}
     >
       {children}

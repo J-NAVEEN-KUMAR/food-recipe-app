@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand">
+          <span className="navbar-brand">
             <img
               src="../../../foodlogo.jpg"
               alt=""
@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link to="/">
               NJ <span>Meals</span>
             </Link>
-          </a>
+          </span>
           <button
             className="navbar-toggler"
             type="button"
@@ -32,14 +32,14 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">
+                <span className="nav-link active" aria-current="page">
                   <Link to="/categories">Categories</Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">
+                <span className="nav-link active" aria-current="page">
                   <Link to="/random">Random</Link>
-                </a>
+                </span>
               </li>
             </ul>
           </div>

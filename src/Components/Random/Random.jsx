@@ -9,7 +9,7 @@ const Random = () => {
   }, [fetchRandomMeal]);
   return (
     <>
-      <div className="info-cards">
+      <div className="info-cards container">
         {randomMeal.map((item) => (
           <div className="card" style={{ width: "18rem" }} key={item.idMeal}>
             <img src={item.strMealThumb} className="card-img-top" alt="..." />
