@@ -1,0 +1,42 @@
+.random-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1em !important;
+
+  .random-card {
+    background-color: #522618 !important;
+    width: 40vw !important;
+    color: white;
+    margin: 10px !important;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px !important;
+
+    img {
+      width: 250px !important;
+      margin: 10px !important;
+      transition: all 0.4s ease;
+      border-radius: 10px !important;
+      object-fit: contain;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .random-btn {
+      color: #522618 !important;
+      background-color: #e7b85e !important;
+      padding: 5px !important;
+      border-radius: 10px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: scale(1.025);
+      }
+    }
+  }
+}
